@@ -1,0 +1,1163 @@
+/* ============================= */
+/* ========== STYLE ============ */
+/* ============================= */
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+}
+
+body.app-body {
+    background: #0a0a0b;
+    color: white;
+}
+
+/* ===== CONTAINERS ===== */
+.page {
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: #1a1a1b;
+    border: 1px solid #2a2a2b;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-blue {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #2563eb;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #9ca3af;
+}
+
+.btn-red {
+    background: #dc2626;
+    color: white;
+}
+
+/* ===== INPUTS ===== */
+.input {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #111;
+    display: flex;
+    border-top: 1px solid #333;
+    z-index: 999;
+}
+
+.bottom-nav button {
+    flex: 1;
+    border: none;
+    background: none;
+    color: #777;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav button.active {
+    color: #3b82f6;
+}
+
+.bottom-nav svg {
+    margin-bottom: 2px;
+}
+
+.bottom-nav span {
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.bottom-nav button.active svg {
+    stroke: #3b82f6;
+}
+
+.bottom-nav button.active span {
+    color: #3b82f6;
+}
+
+/* ===================== */
+/* HOME PAGE */
+/* ===================== */
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home-card, .progress-card, .routines-card {
+    margin-bottom: 20px;
+}
+
+.home-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-card-info {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Progress list */
+.progress-list {
+    margin-top: 10px;
+}
+
+.progress-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+
+.progress-item:last-child {
+    border-bottom: none;
+}
+
+.progress-label {
+    color: #aaa;
+}
+
+.progress-value {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Rotinas */
+.no-routines-text {
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ========================================= */
+/*               HOME PAGE                   */
+/* ========================================= */
+
+.home-screen {
+    min-height: 100vh;
+    background: #0a0a0b;
+    color: white;
+    padding-bottom: 90px; /* espaço pro BottomNav */
+}
+
+.home-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+/* HEADER */
+.home-header {
+    margin-bottom: 32px;
+}
+
+.home-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.home-subtitle {
+    color: #9ca3af;
+}
+
+/* CARD DE PERÍODO */
+.home-card {
+    background: #1a1a1b;
+    border: 1px solid #2a2a2b;
+    border-radius: 22px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.home-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* SELECT DO PERÍODO */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.period-select {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 6px 32px 6px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.period-select option {
+    background: #1a1a1b;
+    color: white;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: #60a5fa;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* GRID DE ESTATÍSTICAS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.stat-box {
+    background: #111;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    overflow: visible !important;
+    height: auto;
+}
+
+.stat-header svg {
+    display: block;
+}
+
+
+.stat-label {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* HISTÓRICO DE TREINOS */
+.history-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* CARD VAZIO */
+.empty-workouts {
+    background: #1a1a1b;
+    border: 1px solid #2a2a2b;
+    padding: 40px 20px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.empty-text {
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+.empty-subtext {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* LISTA DE TREINOS */
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.workout-card {
+    background: #1a1a1b;
+    border: 1px solid #2a2a2b;
+    border-radius: 22px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.workout-card:hover {
+    border-color: #3a3a3b;
+}
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.workout-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.workout-date {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.workout-info {
+    display: flex;
+    gap: 16px;
+    color: #9ca3af;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.workout-volume {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.workout-exercises {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ===========================
+   GLOBAL TREINO PAGE
+=========================== */
+
+.treino-screen {
+    background: #0a0a0b;
+    color: #fff;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+.treino-container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 32px 16px 16px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.treino-header {
+    margin-bottom: 32px;
+}
+
+.treino-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.treino-subtitle {
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===========================
+   QUICK START CARD
+=========================== */
+
+.quick-card {
+    background: rgba(255, 255, 255, 0.05); /* quase invisível */
+    border: 1px solid rgba(47, 17, 214, 0.08);
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quick-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 1px;
+    opacity: 0.9;
+}
+
+.quick-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+}
+
+.quick-btn {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #3b4aff, #7a3ff1); /* menos saturado */
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    transition: 
+        background 0.20s ease,
+        border-color 0.20s ease,
+        transform 0.15s ease;
+}
+
+.quick-btn:hover {
+    background: linear-gradient(135deg, #4f5cff, #8a4fff);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+
+
+/* ===========================
+   PASTAS
+=========================== */
+
+.pastas-section {
+    margin-bottom: 28px;
+}
+
+.pastas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.pastas-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-blue.small-btn {
+    padding: 6px 8px;
+    display: inline-flex;   
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    width: auto !important;     /* <- FORÇA o botão a NÃO esticar */
+    max-width: fit-content;     /* <- garante largura mínima */
+    justify-content: center;
+
+    background-color: #1a1a1b;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: auto;           /* <- joga pra direita */
+}
+
+.btn-blue.small-btn:hover {  /* botão ativado */
+    background: #333;
+}
+
+.pastas-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.pasta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pasta-btn {
+    padding: 6px 12px;
+    background: #1a1a1b;
+    color: #aaa;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.pasta-btn:hover { /* passa o curso */
+    background: #333;
+}
+
+.pasta-btn.active { /* botão clicado */
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+/* editar / deletar ícones da pasta selecionada */
+.pasta-icon {
+    padding: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.pasta-icon.red svg {
+    stroke: #f44;
+}
+
+.pasta-icon:hover svg {
+    stroke: #fff;
+}
+
+/* ===========================
+   ROTINAS
+=========================== */
+
+.rotinas-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.rotinas-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* CARD vazio */
+.rotinas-empty-card {
+    background: #1a1a1b;
+    border: 1px solid #333;
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+}
+
+.rotinas-empty-text {
+    color: #aaa;
+    margin: 12px 0 4px;
+}
+
+.rotinas-empty-sub {
+    font-size: 13px;
+    color: #666;
+}
+
+/* LISTA DE ROTINAS */
+.rotinas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* CARD de rotina */
+.rotina-card {
+    background: #1a1a1b;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.rotina-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.rotina-left {
+    flex: 1;
+}
+
+.rotina-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.rotina-ex-list {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.rotina-count {
+    font-size: 12px;
+    color: #777;
+}
+
+.rotina-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+.rotina-arrow:hover {
+    color: #fff;
+}
+
+.rotina-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.full-btn {
+    width: 100%;
+    padding: 12px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #3b82f6;
+    border: none;
+    border-radius: 14px;
+
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.full-btn:hover {
+    background: #2563eb;
+}
+
+/* ===========================
+   DIALOG / MODAL (shadcn)
+=========================== */
+
+.dialog-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.dialog-bg.show {
+    display: flex;
+}
+
+.dialog-box {
+    width: 90%;
+    max-width: 360px;
+    background: #1a1a1b;
+    border: 1px solid #333;
+    padding: 24px;
+    border-radius: 16px;
+    animation: dialogIn .25s ease;
+}
+
+@keyframes dialogIn {
+    from { opacity: 0; transform: scale(.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.dialog-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.dialog-input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.dialog-input::placeholder {
+    color: #666;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* botão cinza */
+.btn-gray {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    background: #333;
+    border: none;
+    border-radius: 10px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.btn-gray:hover {
+    background: #444;
+}
+
+#btnNewPage {
+    background: transparent;
+    color: #fff;
+    border-color: transparent;
+    transition: transform .15s ease, filter .2s ease;
+}
+
+#btnNewPage:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.6));
+}
+
+/* botão azul */
+.btn-blue {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    background: #3b82f6;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+/* =========================================
+   PAGINA PROFILE
+========================================= */
+
+/* Container geral */
+.profile-screen {
+    min-height: 100vh;
+    background: #0a0a0b;
+    color: white;
+    padding-bottom: 80px;
+}
+
+/* width máxima igual ao React */
+.max-w {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* =============================
+   HEADER
+============================= */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.profile-title {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* botão ícone transparente */
+.btn-icon-ghost {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.btn-icon-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =============================
+   CARD USUÁRIO
+============================= */
+.profile-card {
+    background: #1a1a1b;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #2a2a2b;
+    margin-bottom: 24px;
+}
+
+/* Linha com avatar + nome + editar */
+.profile-user-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+/* Avatar */
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #9333ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    border: 4px solid #3b82f6;
+}
+
+.profile-user-info {
+    flex: 1;
+}
+
+.profile-user-name {
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/* Peso / Altura / Idade */
+.profile-user-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+
+/* =============================
+   GRID DE ESTATÍSTICAS
+============================= */
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    border-top: 1px solid #2a2a2b;
+    padding-top: 20px;
+}
+
+.profile-stat {
+    text-align: center;
+}
+
+.profile-stat-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 2px;
+}
+
+.profile-stat-value p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-stat-label {
+    font-size: 11px;
+    color: #808080;
+}
+
+
+/* =============================
+   CORES DOS ÍCONES
+============================= */
+.text-blue { color: #3b82f6; }
+.text-purple { color: #9333ea; }
+.text-green { color: #22c55e; }
+.text-gray { color: #666; }
+
+
+/* =============================
+   CHART CARD
+============================= */
+.profile-chart-card {
+    background: #1a1a1b;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #2a2a2b;
+    margin-bottom: 24px;
+}
+
+.profile-chart-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+
+/* =============================
+   MEDIÇÕES
+============================= */
+.profile-measurements-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-measurements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* Botão adicionar */
+.btn-blue {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-blue:hover {
+    background: #2563eb;
+}
+
+.small-btn {
+    padding: 6px 12px;
+}
+
+/* cartão vazio */
+.empty-card {
+    background: #1a1a1b;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #2a2a2b;
+    text-align: center;
+}
+
+.empty-title {
+    color: #b0b0b0;
+    margin-bottom: 6px;
+}
+
+.empty-sub {
+    font-size: 13px;
+    color: #888;
+}
+
+/* cartão de medição */
+.measure-card {
+    background: #1a1a1b;
+    border-radius: 20px;
+    border: 1px solid #2a2a2b;
+    padding: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.measure-card:hover {
+    border-color: #3d3d3d;
+}
+
+.measure-date {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.measure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 14px;
+}
+
+
+/* =============================
+   AJUSTES EXTRAS
+============================= */
+canvas {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+
+
+
+
+
+
+/* ============================================================
+                    RESPONSIVIDADE GLOBAL
+   Mantém layout original e adapta automaticamente no mobile
+============================================================ */
+
+/* ------ Ajuste global: nada ultrapassa a tela ------ */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ------ Containers respeitam max-width, mas ocupam bem mobile ------ */
+.page,
+.home-container,
+.treino-container,
+.max-w {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* ============================================================
+   MOBILE NORMAL (até 480px)
+   - grids grandes → 2 colunas
+   - flex não quebra layout
+============================================================ */
+@media (max-width: 480px) {
+
+    /* Todos os grids principais */
+    .stats-grid,
+    .profile-stats-grid,
+    .measure-grid,
+    .progress-grid,
+    .workout-grid,
+    .rotinas-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Flex horizontais não estouram */
+    .workout-info,
+    .profile-user-stats {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+/* ============================================================
+   MOBILE PEQUENO (até 360px)
+   - tudo vira 1 coluna
+============================================================ */
+@media (max-width: 360px) {
+
+    .stats-grid,
+    .profile-stats-grid,
+    .measure-grid,
+    .progress-grid,
+    .workout-grid,
+    .rotinas-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Títulos um pouco menores */
+    .page-title,
+    .home-title,
+    .treino-title,
+    .profile-title {
+        font-size: 22px !important;
+    }
+
+    /* Bottom nav menor */
+    .bottom-nav {
+        height: 52px;
+    }
+
+    .bottom-nav button {
+        font-size: 10px !important;
+    }
+
+    /* Espaçamento interno menor */
+    .workout-info {
+        gap: 8px;
+        font-size: 12px;
+    }
+}
+
+/* ------ Botões nunca estouram largura ------ */
+.btn,
+.full-btn,
+.btn-blue,
+.btn-gray {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* ------ Cards sempre dentro da tela ------ */
+.card,
+.home-card,
+.workout-card,
+.rotina-card,
+.profile-card,
+.measure-card {
+    width: 100%;
+    max-width: 100%;
+}
