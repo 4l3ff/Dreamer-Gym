@@ -1051,6 +1051,103 @@ canvas {
     height: 200px !important;
 }
 
+/* =========================================
+   PÁGINA DE CONFIGURAÇÕES
+========================================= */
+
+.settings-screen {
+    min-height: 100vh;
+    background: #0a0a0b;
+    color: white;
+    padding-bottom: 80px;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #2a2a2b;
+}
+
+.settings-title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.settings-container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.settings-subtitle {
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.settings-card {
+    background: #1a1a1b;
+    border: 1px solid #2a2a2b;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.settings-card.border-red {
+    border-color: rgba(255, 0, 0, 0.25);
+}
+
+.settings-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.settings-card-title {
+    font-weight: 600;
+}
+
+.settings-card-desc {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.settings-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #9333ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px;
+}
+
+.link-blue {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.link-blue:hover {
+    color: #60a5fa;
+}
+
+.text-center {
+    text-align: center;
+}
 
 
 
